@@ -2,12 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Test – Gourdgeous Entrances</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gourdgeous Entrances | Fall Front Entrances – El Paso, TX</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body style="background:#f8f3ea;font-family:system-ui;text-align:center;padding-top:80px;">
-  <h1 style="color:#c3561a;font-size:40px;">🍂 Gourdgeous Entrances – Test Page</h1>
-  <p style="font-size:20px;color:#7a6252;">
-    If you can see this, GitHub Pages is working!
-  </p>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-icon">🎃</span>
+        <div>
+          <div class="brand-name">Gourdgeous Entrances</div>
+          <div class="brand-tagline">Fall front entrance decorating · El Paso, Texas</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Fall Front Entrance Displays</p>
+          <h1>We make your entrance Gourdgeous</h1>
+          <p class="hero-text">
+            Design, deliver and set up stunning pumpkin &amp; gourd displays so you can enjoy the beauty without the hassle.
+            Why DIY when we can GOURD-it for you?
+          </p>
+          <p class="hero-location">📍 El Paso, Texas &amp; surrounding areas</p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn primary">Book your fall display</a>
+            <a href="gallery.html" class="btn ghost">View ideas</a>
+          </div>
+          <p class="hero-note">Perfect for homes, HOAs &amp; storefronts. Limited seasonal spots.</p>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-title">Front door, but make it fall.</p>
+          <p class="hero-card-text">
+            We layer pumpkins, gourds and seasonal accents to create a warm, welcoming entrance that’s ready for guests and photos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>What we decorate</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Front porches &amp; doorways</h3>
+            <p>Cozy fall entrances for homes, townhomes and apartments.</p>
+          </div>
+          <div class="card">
+            <h3>HOAs &amp; neighborhoods</h3>
+            <p>Seasonal displays for entry monuments and shared spaces.</p>
+          </div>
+          <div class="card">
+            <h3>Storefronts &amp; offices</h3>
+            <p>Welcoming entrances for businesses and professional spaces.</p>
+          </div>
+        </div>
+        <p class="section-note">
+          Want pricing details? Visit the <a href="packages.html">Packages</a> page.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Gourdgeous Entrances · El Paso, Texas</p>
+      <p>Instagram: <a href="https://instagram.com/Gourdgeous_entrances" target="_blank">@Gourdgeous_entrances</a></p>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
 </body>
 </html>
