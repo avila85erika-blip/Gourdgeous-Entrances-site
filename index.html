@@ -4,81 +4,846 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gourdgeous Entrances | Fall Front Entrances – El Paso, TX</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Gourdgeous Entrances designs, delivers and sets up stunning fall pumpkin & gourd displays for front entrances in El Paso, Texas. Enjoy the beauty without the hassle.">
+  <style>
+    :root {
+      --bg: #f8f3ea;
+      --bg-alt: #fffaf2;
+      --primary: #c3561a;
+      --primary-dark: #8b3709;
+      --accent: #47624f;
+      --text-main: #33241b;
+      --text-muted: #7a6252;
+      --card-bg: #ffffff;
+      --border-soft: #e2d5c5;
+      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ffe7c2 0, #f8f3ea 42%, #fefaf4 100%);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 100% - 2.5rem);
+      margin: 0 auto;
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(248, 243, 234, 0.92);
+      border-bottom: 1px solid rgba(226, 213, 197, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .brand-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 30%;
+      background: radial-gradient(circle at 30% 20%, #ffd9a0 0, #f39b3c 40%, #c3561a 85%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .brand span:last-child {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.1rem;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--primary);
+      background: rgba(195, 86, 26, 0.06);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.2rem 0 3.6rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.18rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(226, 213, 197, 0.8);
+      margin-bottom: 0.9rem;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 999px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin: 0 0 0.7rem;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: clamp(1.2rem, 2vw, 1.4rem);
+      font-weight: 500;
+      color: var(--primary-dark);
+      margin-top: 0.35rem;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 31rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-location {
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-location-icon {
+      font-size: 1.1rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: var(--radius-pill);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c3561a, #e37d37);
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(195, 86, 26, 0.35);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.03);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--primary-dark);
+      border: 1px solid var(--border-soft);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note-pill {
+      padding: 0.2rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(71, 98, 79, 0.08);
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Hero card */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 1.2rem 1.2rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(226, 213, 197, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.1rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background: rgba(195, 86, 26, 0.07);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary-dark);
+    }
+
+    .hero-photo {
+      height: 210px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #f9c46b 0, #f18c3c 40%, #c3561a 80%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pumpkin-row {
+      display: flex;
+      gap: 0.55rem;
+      padding: 0 0 1.1rem;
+    }
+
+    .pumpkin {
+      width: 46px;
+      height: 46px;
+      border-radius: 60% 55% 65% 55%;
+      background: radial-gradient(circle at 30% 20%, #ffe9bc 0, #f6a445 45%, #c3561a 80%);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      position: relative;
+    }
+
+    .pumpkin:nth-child(2) {
+      transform: scale(1.12) translateY(-4px);
+      z-index: 2;
+    }
+
+    .pumpkin::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      width: 10px;
+      height: 12px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #4a6b44;
+    }
+
+    .steps-bar {
+      margin-top: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .steps-dots {
+      display: flex;
+      gap: 0.25rem;
+      flex: 1;
+    }
+
+    .steps-dots span {
+      flex: 1;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(226, 213, 197, 0.9);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .steps-dots span:nth-child(-n + 2)::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--primary), #e37d37);
+    }
+
+    .hero-card-footer {
+      margin-top: 1rem;
+      padding-top: 0.9rem;
+      border-top: 1px dashed rgba(226, 213, 197, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-mini {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-mini-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(195, 86, 26, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    .hero-mini-text span {
+      display: block;
+    }
+
+    .hero-mini-text span:first-child {
+      font-weight: 600;
+    }
+
+    .hero-mini-text span:last-child {
+      color: var(--text-muted);
+    }
+
+    /* Sections */
+    section {
+      padding: 2.8rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 32rem;
+      margin: 0 auto 2rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-header h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.7rem;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    /* Services (What we decorate) */
+    .services {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(226, 213, 197, 0.9);
+    }
+
+    .service-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      background: rgba(195, 86, 26, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .service-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .service-card p {
+      margin: 0 0 0.7rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .service-meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .steps-list {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .step-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    .step-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(195, 86, 26, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .step-heading {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .step-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .process-note {
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .process-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px dashed rgba(226, 213, 197, 0.9);
+      font-size: 0.9rem;
+    }
+
+    .process-card strong {
+      color: var(--primary-dark);
+    }
+
+    /* Call to Packages */
+    .packages-cta {
+      text-align: center;
+      margin-top: 1.8rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .packages-cta a {
+      color: var(--primary-dark);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.4rem 0 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .footer-inner a {
+      color: var(--primary-dark);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .nav-links {
+        display: none; /* simple mobile for now */
+      }
+
+      .hero-grid,
+      .process-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      section {
+        padding: 2.4rem 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
       <div class="brand">
-        <span class="brand-icon">🎃</span>
+        <div class="brand-icon">🎃</div>
         <div>
-          <div class="brand-name">Gourdgeous Entrances</div>
-          <div class="brand-tagline">Fall front entrance decorating · El Paso, Texas</div>
+          Gourdgeous Entrances
+          <span>Fall front entrance design – El Paso, TX</span>
         </div>
       </div>
-      <nav class="nav">
-        <a href="index.html" class="active">Home</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
         <a href="packages.html">Packages</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-cta">Book for fall</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Fall Front Entrance Displays</p>
-          <h1>We make your entrance Gourdgeous</h1>
-          <p class="hero-text">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Fall Front Entrance Displays
+          </div>
+          <h1>
+            We make your entrance Gourdgeous
+            <span>Stunning pumpkin &amp; gourd decor for your front door.</span>
+          </h1>
+          <p class="hero-tagline">
             Design, deliver and set up stunning pumpkin &amp; gourd displays so you can enjoy the beauty without the hassle.
             Why DIY when we can GOURD-it for you?
           </p>
-          <p class="hero-location">📍 El Paso, Texas &amp; surrounding areas</p>
-          <div class="hero-actions">
-            <a href="contact.html" class="btn primary">Book your fall display</a>
-            <a href="gallery.html" class="btn ghost">View ideas</a>
+          <div class="hero-location">
+            <span class="hero-location-icon">📍</span>
+            El Paso, Texas &amp; surrounding areas
           </div>
-          <p class="hero-note">Perfect for homes, HOAs &amp; storefronts. Limited seasonal spots.</p>
+          <div class="hero-cta-row">
+            <a href="contact.html" class="btn btn-primary">Book your fall display</a>
+            <a href="gallery.html" class="btn btn-ghost">View entrance ideas</a>
+          </div>
+          <div class="hero-note">
+            <span class="hero-note-pill">Limited seasonal spots</span>
+            <span>Perfect for homes, HOAs &amp; storefronts.</span>
+          </div>
         </div>
-        <div class="hero-card">
-          <p class="hero-card-title">Front door, but make it fall.</p>
-          <p class="hero-card-text">
-            We layer pumpkins, gourds and seasonal accents to create a warm, welcoming entrance that’s ready for guests and photos.
+
+        <aside class="hero-card" aria-label="Preview of fall entrance display">
+          <div class="hero-card-tag">Set up &amp; take down included</div>
+          <div class="hero-photo">
+            <div class="pumpkin-row">
+              <div class="pumpkin"></div>
+              <div class="pumpkin"></div>
+              <div class="pumpkin"></div>
+            </div>
+          </div>
+          <div class="steps-bar">
+            <div>From plain porch to pumpkin-perfect in 3 steps.</div>
+            <div class="steps-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="hero-card-footer">
+            <div class="hero-mini">
+              <div class="hero-mini-badge">🍂</div>
+              <div class="hero-mini-text">
+                <span>Custom to your home</span>
+                <span>Colors, styles &amp; vibe to match you.</span>
+              </div>
+            </div>
+            <div class="hero-mini">
+              <div class="hero-mini-badge">⭐</div>
+              <div class="hero-mini-text">
+                <span>Hassle-free</span>
+                <span>We handle delivery, setup &amp; pickup.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WHAT WE DECORATE -->
+    <section class="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">What we decorate</div>
+          <h2>Fall entrances that make everyone stop &amp; stare</h2>
+          <p>
+            From cozy porches to busy storefronts, we create layered pumpkin &amp; gourd displays that feel warm,
+            welcoming and totally photo-worthy.
           </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🏡</div>
+            <h3>Front porches &amp; doorways</h3>
+            <p>
+              Classic fall moments for your home entrance: pumpkins, gourds, lanterns and seasonal accents styled to
+              fit your colors and vibe.
+            </p>
+            <div class="service-meta">Perfect for homes &amp; townhomes</div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🏘️</div>
+            <h3>HOAs &amp; neighborhood entries</h3>
+            <p>
+              Make your neighborhood feel instantly festive with styled displays for entry monuments, signage and
+              shared spaces.
+            </p>
+            <div class="service-meta">Gorgeous curb appeal</div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🏬</div>
+            <h3>Storefronts &amp; offices</h3>
+            <p>
+              Invite customers in with a welcoming fall moment right at the door. Great for boutiques, salons, cafés
+              and professional offices.
+            </p>
+            <div class="service-meta">Seasonal brand touch</div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- HOW IT WORKS -->
+    <section>
       <div class="container">
-        <h2>What we decorate</h2>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Front porches &amp; doorways</h3>
-            <p>Cozy fall entrances for homes, townhomes and apartments.</p>
-          </div>
-          <div class="card">
-            <h3>HOAs &amp; neighborhoods</h3>
-            <p>Seasonal displays for entry monuments and shared spaces.</p>
-          </div>
-          <div class="card">
-            <h3>Storefronts &amp; offices</h3>
-            <p>Welcoming entrances for businesses and professional spaces.</p>
-          </div>
+        <div class="section-header">
+          <div class="section-eyebrow">How it works</div>
+          <h2>We GOURD-it for you in 3 simple steps</h2>
+          <p>No hauling, no guessing, no cleanup. Just a Gourdgeous entrance for the whole season.</p>
         </div>
-        <p class="section-note">
-          Want pricing details? Visit the <a href="packages.html">Packages</a> page.
+
+        <div class="process-grid">
+          <div>
+            <div class="steps-list">
+              <div class="step-row">
+                <div class="step-badge">1</div>
+                <div>
+                  <div class="step-heading">Quick consult</div>
+                  <p class="step-text">
+                    You share a photo of your entrance, your preferred colors and your budget. We recommend a package
+                    that fits your space in El Paso.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-row">
+                <div class="step-badge">2</div>
+                <div>
+                  <div class="step-heading">Design &amp; setup day</div>
+                  <p class="step-text">
+                    We source your pumpkins, gourds and accents, then deliver and style everything for you.
+                    You don’t have to lift a single pumpkin.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-row">
+                <div class="step-badge">3</div>
+                <div>
+                  <div class="step-heading">Enjoy &amp; easy pickup</div>
+                  <p class="step-text">
+                    Enjoy your Gourdgeous entrance all season. At the end of your display period, we come back to
+                    remove everything for you.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p class="process-note">
+              <strong>Tip:</strong> Booking early means you get your preferred weekend and time slot as fall dates fill
+              up quickly in El Paso.
+            </p>
+          </div>
+
+          <aside class="process-card">
+            <p><strong>Every display includes:</strong></p>
+            <ul>
+              <li>Custom design plan for your specific entrance</li>
+              <li>All pumpkins, gourds &amp; decor elements we use</li>
+              <li>Delivery, full setup &amp; styling</li>
+              <li>Optional lighting accents (on select packages)</li>
+              <li>Pickup / removal at the end of the season or display period</li>
+            </ul>
+          </aside>
+        </div>
+
+        <p class="packages-cta">
+          Ready to choose a package?  
+          <a href="packages.html">View fall packages &amp; pricing →</a>
         </p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer>
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Gourdgeous Entrances · El Paso, Texas</p>
-      <p>Instagram: <a href="https://instagram.com/Gourdgeous_entrances" target="_blank">@Gourdgeous_entrances</a></p>
+      <div>© <span id="year"></span> Gourdgeous Entrances · El Paso, Texas</div>
+      <div>
+        Visit our <a href="gallery.html">gallery</a> or
+        <a href="contact.html">send a booking request</a>.
+      </div>
     </div>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
